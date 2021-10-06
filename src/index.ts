@@ -19,14 +19,10 @@ class Decipher extends Command {
   async run() {
     const {args, flags} = this.parse(Decipher)
 
-    // const key = flags.key
-    // const data = flags.data
-    // const file = flags.file
     let fileData
 
     if (!flags.key) {
       this.error('Missing key flag (-k)')
-      return
     }
     if (!flags.data && !flags.file) {
       this.error('Missing data (-d) and file (-f) flags. Please provide at least one.')
